@@ -1,0 +1,100 @@
+"install-server": "npm install --prefix server",
+"install-client": "bpm install --prefix client",
+"install": "npm run install --server && npm run install-client",
+"server": "npm run watch --prefix server",
+"client": "npm start --prefix client",
+"watch": "npm run server && npm run client",
+"test": "npm run test --prefix server && npm run test --prefix client"
+
+// const PORT = process.env.PORT || 8000; 
+//           OR
+// "start": "set PORT=5000 && node src/server.js"
+
+// console.log(PORT);
+
+// BASH SCRIPT//SHELL SCRIPT COMMAND
+
+// set BUILD_PATH=../server/public&& react-scripts build
+
+
+
+// app.listen();
+
+
+// router + controller
+// controller is a callback function to router
+// controller uses models
+
+// models -- data from database
+// controller -- (router,callbackfunction(req,res))
+// view -- user manipulates or sees data through fetch (get,post,put,patch,delete)
+
+--------------------------------------------------------------------------
+
+Environment Variables On Windows
+Heads up! If you're using the default Windows shell, the syntax to set an environment variable like PORT is slightly different than what we saw in the previous video. To set PORT in your package.json on Windows, you'll want to write:
+
+"start": "set PORT=5000&& node src/server.js"
+
+Instead of:
+
+"start": "PORT=5000 node src/server.js"
+
+Alternatively, there's the cross-env NPM package which will work all platforms. Both options work!
+
+------------------------------------------------------------------------------
+
+
+Friendly reminder! BUILD_PATH is an environment variable, just like PORT. On Windows, with the default shell, the way we set our BUILD_PATH variable is:
+
+set BUILD_PATH=../server/public&& react-scripts build
+
+Rather than the bash version:
+
+BUILD_PATH=../server/public react-scripts build
+
+
+------------------------------------------------------------------------------
+
+Heads up! In the next video, on Windows, the npm run watch command may not start both your client and server, depending on your shell. To solve this:
+
+You can use an NPM package like concurrently or npm-run-all instead of the & symbol in the npm run watch command.
+
+Or if you have the bash shell installed on your machine (for example, through Git for Windows), set the default shell used by NPM to the bash shell by typing: npm config set script-shell bash in your terminal. All commands in your package.json will now run in a bash shell.
+
+
+
+If you're having issues with the npm install command:
+
+Try removing package-lock.json in both the server/ and client/ folders.
+
+Try updating to a version of Node greater than 16 with an NPM version greater than 7.11. There is a bug in previous versions of NPM that prevents the --prefix parameter from working correctly.
+
+
+
+What we're working with here is automation and specifically DevOps, which is often a dedicated role when working in a larger team of developers. It takes lots of practice and patience to get right!
+
+
+
+3. sh
+sh, also known as Bourne Shell, is a command programming language for UNIX-like systems, defined by the POSIX standards. sh can take input from either a keyboard or a file, commonly called a script file. On most Linux systems, it’s implemented by programs like the original Bourne Shell, dash, and ksh.
+4. Bash
+Like sh, Bash (Bourne Again Shell) is a command language processor and a shell. It’s the default login shell on most Linux distributions. Bash is a superset of sh, which means that Bash supports features of sh and provides more extensions on top of that. Though, most of the commands work similarly as in sh.
+Since the release of Bash, it’s been the de facto shell for Linux operating systems.
+
+Microsoft's DOS became the most successful DOS of them all. DOS was never based on Unix at all, which is why Windows uses a backslash for file paths while everything else uses a forward slash.
+
+UNIX VS DOS VS Linux
+
+MOVIE SUGGESTION : Revolution OS
+
+Linux command line books
+Unix command line books
+DOS command line books
+UNIX / Linux books
+
+from bash to z shell book 
+UNIX: Getting Started With UNIX The Ultimate Beginners Guide book
+
+Windows vs Mac vs Linux - OS Comparison 
+UNIX
