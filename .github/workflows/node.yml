@@ -1,9 +1,9 @@
 name: NASA Project CI
 on:
   push:
-    braches: [master]
+    braches: [main]
   pull_request:
-    braches: [master]
+    braches: [main]
 jobs:
   build:
     runs-on: ubuntu-latest
